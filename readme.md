@@ -1,3 +1,13 @@
+Features:
+- [x] Create a new user
+- [x] Login
+- [x] Logout
+- [x] Create a new post
+- [x] View all posts
+- [x] View all posts by a user
+- [x] Delete a post
+
+
 To run this app: 
 1. Clone repo
 2. install flask, flask_sqlalchemy
