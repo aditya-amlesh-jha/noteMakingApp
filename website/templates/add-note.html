@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} {{title}} {% endblock %}
+{% block content %} 
+
+
+
+<!-- creating a form for taking input of notes -->
+<div class="row m-0">
+    <div class="col-lg-8 col-sm-10 mx-auto">
+        <h1 class="text-center mt-5 mb-3">ADD NOTE</h1>
+        <form method="POST">
+            <input type="text" name="note-title" id="note-title" class="form-control mb-3" placeholder="Enter Title">
+            <textarea name="note-text" id="note-text" class="form-control" cols="30" rows="10"></textarea>
+            <div class="text-center">
+                <button onClick="validateNote(event)" class="btn btn-primary mt-4">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+to load something from static folder in templates use this:
+
+<script>
+type = "text/javascript"
+src = "{{ url_for('static',filename='index.js' )}}"
+</script>
+
+
+We can write our python code in : {{ }}
+
+This website is made using flask and bootstrap
+
+Bootstrap setup:
+To use bootstrap we need to add this in base.html:
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+This website is made for making Notes
+Allows for notes creation and deletion
+Allows for user creation and login
+Allows for user to see only his notes
+Allows for user to logout
+

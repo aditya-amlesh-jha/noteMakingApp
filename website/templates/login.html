@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}  {{title}}  {% endblock %}
+{% block content %} 
+
+<div class="row m-0">
+    <div class="col-lg-4 col-md-6 col-10 mx-auto mt-5">
+        <form method="POST" class="">
+            <div class="mb-3">
+              <label for="email-input" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control" id="email-input" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="password-input" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="password-input">
+            </div>
+            <div class="mb-3">
+                <a href="/forgotpassword" style="text-decoration: none;">Click Here to Reset Password</a>
+            </div>
+            <button onClick="validateLogin(event)" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+ {% endblock %}

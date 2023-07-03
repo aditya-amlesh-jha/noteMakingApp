@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} {{title}} {% endblock %}
+{% block content %} 
+<!-- showing notes -->
+
+<div class="row m-0">
+
+    <div class="col-lg-8 col-sm-9 mt-3 mx-auto">
+        <h2 class="mb-3">Notes</h2>
+        <ul class="list-group list-group-flush" id="notes">
+            {% for note in user.notes %}
+            <li class="list-group-item mt-2">
+              <div>
+                <h4>{{note.title}}</h4>
+                <p>{{note.content}}</p>
+                <button type="button" class="close btn btn-danger" onClick="handleDelete({{ note.id }})">Delete</button>
+              </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}
