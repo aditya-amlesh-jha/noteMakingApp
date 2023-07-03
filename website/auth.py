@@ -77,3 +77,25 @@ def signup():
 
     # saving the data in database
     # if the data is saved successfully then send a 200 status code else send a 400 status code
+
+
+@auth.route('/user-details', methods=['GET','POST'])
+@login_required
+def user_details():
+    if request.method == 'GET':
+        return render_template("user-details.html",title=current_user.name, user=current_user)
+    
+    try:
+        data = request.json
+        name = data['name']
+        phone = data['phone']
+
+        user = User.query.filter_by(id=current_user.id).first()
+        user.name = name
+        user.phone = phone
+        db.session.commit()
+        
+    except Exception:
+        return Response("Error",status=400)
+    
+    return Response(status=200)

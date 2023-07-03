@@ -177,3 +177,48 @@ handleDelete = (note_id) => {
     }
     )
 }
+
+enableEditing = (e)=>{
+    e.preventDefault();
+    document.getElementById("user-name").readOnly=false;
+    document.getElementById("user-phone").readOnly=false;
+
+    document.getElementById("editBtn").style.display="none";
+    document.getElementById("saveBtn").style.display="inline-block";
+}
+
+modifyDetails = (e)=>{
+
+    e.preventDefault();
+
+    const name = document.getElementById("user-name").value;
+    const phone = document.getElementById("user-phone").value;
+
+    if (!validateName(name)) {
+        return;
+    }
+
+    if (!validateLength(phone, 10, "Phone")) {
+        return;
+    }
+
+    const formData = {
+        name: name,
+        phone: phone
+    };
+
+    sendData("user-details",formData)
+    .then(response => {
+        if (response.ok) {
+            window.location.href = "/user-details";
+        } else {
+            response.text().then((errorMessage) => {
+                displayErrorMessage(errorMessage);
+            });
+        }
+    }
+    ).catch(err => {
+        displayErrorMessage("Something went wrong.");
+    }
+    )
+}

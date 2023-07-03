@@ -6,6 +6,8 @@ Features:
 - [x] View all posts
 - [x] View all posts by a user
 - [x] Delete a post
+- [x] Update a user
+- [x] User profile
 
 
 To run this app: 
@@ -16,8 +18,7 @@ To run this app:
 
 Features to be added:
 - [ ] Update a post
-- [ ] Update a user
 - [ ] Delete a user
 - [ ] Rich text editor
-- [ ] User profile
+
 - [ ] User profile picture
